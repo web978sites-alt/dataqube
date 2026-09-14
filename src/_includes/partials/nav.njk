@@ -1,0 +1,25 @@
+{% from "icons/icons.njk" import menu %}
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="2" y="2" width="9" height="9" rx="2" fill="#0B5FFF"></rect>
+        <rect x="13" y="2" width="9" height="9" rx="2" fill="#14B8A6"></rect>
+        <rect x="2" y="13" width="9" height="9" rx="2" fill="#14B8A6"></rect>
+        <rect x="13" y="13" width="9" height="9" rx="2" fill="#0B5FFF"></rect>
+      </svg>
+      <span>{{ site.name }}</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+      {{ menu("icon") }}
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+      {% for item in site.nav %}
+      <a class="primary-nav__link" href="{{ item.url }}">{{ item.label }}</a>
+      {% endfor %}
+      <a class="btn btn--primary primary-nav__cta" href="/contact/">Get Started</a>
+    </nav>
+  </div>
+</header>

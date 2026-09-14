@@ -1,0 +1,55 @@
+---
+layout: layouts/page.njk
+---
+{% from "partials/answer-box.njk" import answerBox %}
+{% from "partials/faq-block.njk" import faqBlock %}
+{% from "icons/icons.njk" import check %}
+{% from "partials/cta-band.njk" import ctaBand %}
+
+<section class="hero container">
+  <span class="hero__eyebrow">Service</span>
+  <h1>{{ service.name }}</h1>
+  {{ answerBox(service.heroAnswer) }}
+  <p class="max-w-prose">{{ service.intro }}</p>
+</section>
+
+<section class="section container">
+  <h2>What's included</h2>
+  <ul class="feature-list">
+    {% for feature in service.features %}
+    <li>{{ check("feature-list__icon") }}<span>{{ feature }}</span></li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% if service.faqs and service.faqs.length %}
+<section class="section section--alt">
+  <div class="container max-w-prose">
+    <h2>Frequently asked questions about {{ service.name | lower }}</h2>
+    {{ faqBlock(service.faqs) }}
+  </div>
+</section>
+{% endif %}
+
+{% if service.relatedSlugs and service.relatedSlugs.length %}
+<section class="section container">
+  <h2>Related services</h2>
+  <div class="grid grid--2">
+    {% for slug in service.relatedSlugs %}
+      {% for s in services %}
+        {% if s.slug == slug %}
+        <a class="card card--link" href="/services/{{ s.slug }}/">
+          <h3>{{ s.name }}</h3>
+          <p>{{ s.shortDescription }}</p>
+          <span class="card__more">Learn more &rarr;</span>
+        </a>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="section container">
+  {{ ctaBand("Talk to an analyst about " + (service.name | lower), "Tell us about your current data setup and what you're trying to achieve — we'll follow up with a scoped plan.", "Contact Us", "/contact/") }}
+</section>

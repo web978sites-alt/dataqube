@@ -1,0 +1,79 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-ink-900);
+  background: var(--color-surface-0);
+}
+
+h1, h2, h3, h4 {
+  line-height: var(--leading-tight);
+  font-weight: 700;
+  color: var(--color-ink-900);
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-4);
+}
+
+h3 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-2);
+}
+
+p {
+  color: var(--color-ink-600);
+}
+
+p + p {
+  margin-top: var(--space-4);
+}
+
+a {
+  color: var(--color-primary-600);
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+}
+
+a:hover {
+  color: var(--color-primary-700);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-primary-700);
+  color: #fff;
+  padding: var(--space-2) var(--space-4);
+  z-index: 100;
+  border-radius: 0 0 var(--radius-md) 0;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 3.25rem;
+  }
+}

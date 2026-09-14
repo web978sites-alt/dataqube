@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include "partials/head-meta.njk" %}
+  <link rel="icon" href="/assets/img/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Blog" href="/blog/feed.xml">
+  {% include "partials/json-ld.njk" %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include "partials/nav.njk" %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+  <script defer src="/assets/js/main.js"></script>
+</body>
+</html>

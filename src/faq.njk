@@ -1,0 +1,28 @@
+---
+layout: layouts/page.njk
+title: Frequently Asked Questions
+description: "Answers to common questions about DataQube Analytics' data management, analytics, business intelligence, visualization, and consulting services."
+useGlobalFaq: true
+breadcrumbs:
+  - name: Home
+    url: /
+  - name: FAQ
+    url: /faq/
+---
+{% from "partials/answer-box.njk" import answerBox %}
+{% from "partials/faq-block.njk" import faqBlock %}
+{% from "partials/cta-band.njk" import ctaBand %}
+
+<section class="hero container">
+  <span class="hero__eyebrow">FAQ</span>
+  <h1>Frequently asked questions</h1>
+  {{ answerBox("Below are answers to the questions we hear most often about DataQube Analytics' services, pricing approach, and process. For questions specific to one service, each service page also has its own FAQ section.") }}
+</section>
+
+<section class="section container max-w-prose">
+  {{ faqBlock(faq) }}
+</section>
+
+<section class="section container">
+  {{ ctaBand("Still have questions?", "Reach out and we'll get back to you directly — no automated runaround.", "Contact Us", "/contact/") }}
+</section>

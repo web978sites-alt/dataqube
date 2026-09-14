@@ -1,0 +1,60 @@
+---
+layout: layouts/page.njk
+title: Contact Us
+description: "Get in touch with DataQube Analytics to discuss data management, analytics, business intelligence, visualization, or data consulting."
+isContactPage: true
+breadcrumbs:
+  - name: Home
+    url: /
+  - name: Contact
+    url: /contact/
+---
+{% from "partials/answer-box.njk" import answerBox %}
+
+<section class="hero container">
+  <span class="hero__eyebrow">Contact</span>
+  <h1>Let's talk about your data</h1>
+  {{ answerBox("Tell us a bit about your current data setup and what you're trying to achieve. We'll follow up to scope the right service and provide an estimate — there's no automated sales funnel.") }}
+</section>
+
+<section class="section container">
+  <div class="grid grid--2">
+    <div>
+      <h2>Send us a message</h2>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="visually-hidden"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" autocomplete="organization">
+        </div>
+        <div class="form-field">
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary">Send Message</button>
+      </form>
+    </div>
+
+    <div>
+      <h2>Other ways to reach us</h2>
+      <p><strong>Email:</strong> <a href="mailto:{{ site.nap.email }}">{{ site.nap.email }}</a></p>
+      <p><strong>Phone:</strong> {{ site.nap.phone }}</p>
+      <p><strong>Address:</strong><br>
+        {{ site.nap.streetAddress }}<br>
+        {{ site.nap.addressLocality }}, {{ site.nap.addressRegion }} {{ site.nap.postalCode }}<br>
+        Canada
+      </p>
+      <p class="text-sm" style="color: var(--color-ink-400);">Placeholder contact details shown above — replace with real business information before launch.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,88 @@
+---
+layout: layouts/page.njk
+title: Data Analytics Services
+description: "Five data analytics services — data management, advanced analytics, business intelligence, data visualization, and data consulting — scoped to your organization's actual needs."
+showServiceList: true
+breadcrumbs:
+  - name: Home
+    url: /
+  - name: Services
+    url: /services/
+---
+{% import "icons/icons.njk" as icons %}
+{% from "partials/answer-box.njk" import answerBox %}
+{% from "partials/cta-band.njk" import ctaBand %}
+
+<section class="hero container">
+  <span class="hero__eyebrow">Services</span>
+  <h1>Data analytics services built around your actual data, not a fixed package</h1>
+  {{ answerBox("DataQube Analytics offers five services — data management, advanced analytics, business intelligence, data visualization, and data consulting — that cover the full path from scattered raw data to confident, day-to-day decisions. Each is scoped individually based on your current data maturity and goals.") }}
+</section>
+
+<section class="section container">
+  <h2>Compare our services</h2>
+  <div class="table-wrap">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th scope="col">Service</th>
+          <th scope="col">Primary focus</th>
+          <th scope="col">Typical output</th>
+          <th scope="col">Best fit when&hellip;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><a href="/services/data-management/">Data Management</a></th>
+          <td>Collecting, cleaning, and governing data</td>
+          <td>Integrated warehouse, governance framework</td>
+          <td>Data is scattered, inconsistent, or hard to trust</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="/services/advanced-analytics/">Advanced Analytics</a></th>
+          <td>Statistical modeling and prediction</td>
+          <td>Forecasts, predictive models</td>
+          <td>You need to know what's likely to happen next</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="/services/business-intelligence/">Business Intelligence</a></th>
+          <td>Reporting on what already happened</td>
+          <td>Dashboards, KPI reports</td>
+          <td>Teams need day-to-day visibility into performance</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="/services/data-visualization/">Data Visualization</a></th>
+          <td>Presenting data clearly for a specific audience</td>
+          <td>Interactive charts, custom graphics</td>
+          <td>Existing reports are accurate but hard to understand</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="/services/data-consulting/">Data Consulting</a></th>
+          <td>Strategic data direction and governance</td>
+          <td>Data strategy, roadmap, governance framework</td>
+          <td>You need a plan before committing to a platform</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <h2>All services</h2>
+    <div class="grid grid--3 mt-8">
+      {% for s in services %}
+      <a class="card card--link" href="/services/{{ s.slug }}/">
+        {{ icons[s.icon]("card__icon") }}
+        <h3>{{ s.name }}</h3>
+        <p>{{ s.shortDescription }}</p>
+        <span class="card__more">Learn more &rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  {{ ctaBand("Not sure which service fits?", "Tell us about your current data setup and what you're trying to achieve — we'll recommend where to start.", "Contact Us", "/contact/") }}
+</section>

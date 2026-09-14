@@ -1,0 +1,10 @@
+{% macro ctaBand(heading, body, ctaLabel, ctaUrl) %}
+<div class="cta-band">
+  <h2>{{ heading }}</h2>
+  <p class="max-w-prose" style="margin-inline:auto;">{{ body }}</p>
+  <div class="cta-band__actions">
+    <a class="btn btn--on-dark" href="{{ ctaUrl }}">{{ ctaLabel }}</a>
+    <a class="btn btn--secondary" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.3);" href="/services/">Explore Services</a>
+  </div>
+</div>
+{% endmacro %}

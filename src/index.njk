@@ -1,0 +1,91 @@
+---
+layout: layouts/page.njk
+title: Data Analytics Consulting Services
+description: "DataQube Analytics helps organizations in finance, healthcare, retail, manufacturing, technology, government, and media turn raw data into decisions — data management, advanced analytics, business intelligence, data visualization, and data consulting."
+showServiceList: true
+---
+{% import "icons/icons.njk" as icons %}
+{% from "partials/answer-box.njk" import answerBox %}
+{% from "partials/cta-band.njk" import ctaBand %}
+{% from "partials/client-logos.njk" import clientLogos %}
+{% from "partials/testimonial-card.njk" import testimonialCard %}
+
+<section class="hero container">
+  <span class="hero__eyebrow">Data Analytics Consulting</span>
+  <h1>Empowering data-driven success with advanced analytics.</h1>
+  {{ answerBox(site.description) }}
+  <div class="hero__actions">
+    <a class="btn btn--primary" href="/contact/">Get Started</a>
+    <a class="btn btn--secondary" href="/services/">Explore Services</a>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <h2>What we do</h2>
+    <p class="max-w-prose">Five services that cover the full path from raw data to confident decisions.</p>
+    <div class="grid grid--3 mt-8">
+      {% for s in services %}
+      <a class="card card--link" href="/services/{{ s.slug }}/">
+        {{ icons[s.icon]("card__icon") }}
+        <h3>{{ s.name }}</h3>
+        <p>{{ s.shortDescription }}</p>
+        <span class="card__more">Learn more &rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Industries we serve</h2>
+    <p class="max-w-prose">We adapt our approach to the data and compliance realities of each industry we work in.</p>
+    <div class="grid grid--3 mt-8">
+      {% for i in industries %}
+      <div class="card">
+        <h3>{{ i.name }}</h3>
+        <p>{{ i.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <h2>Why choose DataQube Analytics</h2>
+    <div class="grid grid--3 mt-8">
+      {% for d in differentiators %}
+      <div class="card">
+        {{ icons[d.icon]("card__icon") }}
+        <h3>{{ d.name }}</h3>
+        <p>{{ d.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container text-center">
+    <h2>Trusted by teams like yours</h2>
+    {{ clientLogos(logos) }}
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <h2>What clients say</h2>
+    <div class="grid grid--3 mt-8">
+      {% for t in testimonials %}
+      {{ testimonialCard(t) }}
+      {% endfor %}
+    </div>
+    <p class="text-center mt-6"><a href="/case-studies/">Read more case studies &rarr;</a></p>
+  </div>
+</section>
+
+<section class="section container">
+  {{ ctaBand("Ready to make your data work harder?", "Tell us about your current data setup and what you're trying to achieve — we'll follow up with a scoped plan.", "Get Started", "/contact/") }}
+</section>

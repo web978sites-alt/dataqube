@@ -1,0 +1,10 @@
+{% macro clientLogos(items) %}
+<div class="logo-strip">
+  {% for logo in items %}
+  <span class="logo-strip__item" title="{{ 'Placeholder — replace with real client logo' if logo.isPlaceholder else logo.name }}">{{ logo.name }}</span>
+  {% endfor %}
+</div>
+{% if items and items[0].isPlaceholder %}
+<p class="text-center text-sm mt-4" style="color: var(--color-ink-400);">Placeholder names shown for layout purposes — replace with real client logos before launch.</p>
+{% endif %}
+{% endmacro %}

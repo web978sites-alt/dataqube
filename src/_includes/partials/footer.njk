@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <div class="brand" style="color:#fff">{{ site.name }}</div>
+        <p class="mt-4 text-sm" style="color:#cbd5e1; max-width: 42ch;">{{ site.tagline }}</p>
+      </div>
+
+      <div>
+        <h3 style="color:#fff; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .04em;">Services</h3>
+        <nav aria-label="Footer services">
+          {% for s in services %}
+          <div class="mt-2"><a href="/services/{{ s.slug }}/" class="text-sm">{{ s.name }}</a></div>
+          {% endfor %}
+        </nav>
+      </div>
+
+      <div>
+        <h3 style="color:#fff; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .04em;">Company</h3>
+        <nav aria-label="Footer company">
+          <div class="mt-2"><a href="/about/" class="text-sm">About</a></div>
+          <div class="mt-2"><a href="/faq/" class="text-sm">FAQ</a></div>
+          <div class="mt-2"><a href="/blog/" class="text-sm">Blog</a></div>
+          <div class="mt-2"><a href="/case-studies/" class="text-sm">Case Studies</a></div>
+        </nav>
+      </div>
+
+      <div>
+        <h3 style="color:#fff; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .04em;">Contact</h3>
+        <p class="mt-2 text-sm">{{ site.nap.email }}</p>
+        <p class="mt-2 text-sm">{{ site.nap.phone }}</p>
+      </div>
+    </div>
+
+    <div class="site-footer__legal">
+      <span>&copy; {{ currentYear }} {{ site.name }}. All rights reserved.</span>
+      {% for link in site.footerLegal %}
+      <a href="{{ link.url }}">{{ link.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</footer>

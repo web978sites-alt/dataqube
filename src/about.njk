@@ -1,0 +1,45 @@
+---
+layout: layouts/page.njk
+title: About DataQube Analytics
+description: "DataQube Analytics is a Canadian data analytics consulting firm helping organizations turn raw data into decisions. Learn about our approach and team."
+breadcrumbs:
+  - name: Home
+    url: /
+  - name: About
+    url: /about/
+---
+{% import "icons/icons.njk" as icons %}
+{% from "partials/answer-box.njk" import answerBox %}
+{% from "partials/cta-band.njk" import ctaBand %}
+
+<section class="hero container">
+  <span class="hero__eyebrow">About Us</span>
+  <h1>Who is DataQube Analytics?</h1>
+  {{ answerBox(site.description) }}
+  <p class="max-w-prose">Our mission is to help businesses harness the power of data and analytics to unlock their full potential — through tailored solutions rather than one-size-fits-all packages. We work alongside your team throughout each engagement, not just at the handoff.</p>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <h2>What we're built on</h2>
+    <div class="grid grid--3 mt-8">
+      {% for d in differentiators %}
+      <div class="card">
+        {{ icons[d.icon]("card__icon") }}
+        <h3>{{ d.name }}</h3>
+        <p>{{ d.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <h2>Our team</h2>
+  <p class="max-w-prose">DataQube Analytics is made up of data scientists, analysts, and engineers experienced with real-world data challenges across finance, healthcare, retail, manufacturing, technology, government, and media.</p>
+  <p class="max-w-prose text-sm" style="color: var(--color-ink-400);">Placeholder — individual team bios and headshots will be added here once finalized.</p>
+</section>
+
+<section class="section container">
+  {{ ctaBand("Want to work with us?", "Tell us about your current data setup and what you're trying to achieve — we'll follow up with a scoped plan.", "Contact Us", "/contact/") }}
+</section>

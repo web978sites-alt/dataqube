@@ -1,0 +1,8 @@
+{% macro testimonialCard(item) %}
+<div class="testimonial-card">
+  <p class="testimonial-card__quote">&ldquo;{{ item.quote }}&rdquo;</p>
+  <p class="testimonial-card__author">{{ item.author }}</p>
+  <p class="testimonial-card__title">{{ item.title }}</p>
+  {% if item.isPlaceholder %}<span class="placeholder-badge">Sample — pending client approval</span>{% endif %}
+</div>
+{% endmacro %}

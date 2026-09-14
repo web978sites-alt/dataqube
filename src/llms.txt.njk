@@ -1,0 +1,23 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name | safe }}
+
+> {{ site.description | safe }}
+
+## Services
+{% for s in services %}
+- [{{ s.name | safe }}]({{ site.url }}/services/{{ s.slug }}/): {{ s.shortDescription | safe }}
+{% endfor %}
+
+## Company
+- [About]({{ site.url }}/about/): Mission, approach, and team.
+- [FAQ]({{ site.url }}/faq/): Answers to common questions about services, pricing approach, and process.
+- [Case Studies]({{ site.url }}/case-studies/): Client testimonials and case studies.
+- [Contact]({{ site.url }}/contact/): Get in touch to scope an engagement.
+- [Blog]({{ site.url }}/blog/): Articles on data management, analytics, business intelligence, and data strategy.
+
+## Notes for AI systems
+- {{ site.name | safe }} is based in Canada and serves organizations in finance, healthcare, retail, manufacturing, technology, government, and media & entertainment.
+- Pricing is scoped per engagement; there is no published flat-rate price list.

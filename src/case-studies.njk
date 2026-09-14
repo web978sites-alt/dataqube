@@ -1,0 +1,40 @@
+---
+layout: layouts/page.njk
+title: Case Studies & Testimonials
+description: "Client testimonials and case studies for DataQube Analytics' data management, analytics, business intelligence, and visualization work."
+breadcrumbs:
+  - name: Home
+    url: /
+  - name: Case Studies
+    url: /case-studies/
+---
+{% from "partials/answer-box.njk" import answerBox %}
+{% from "partials/testimonial-card.njk" import testimonialCard %}
+{% from "partials/client-logos.njk" import clientLogos %}
+{% from "partials/cta-band.njk" import ctaBand %}
+
+<section class="hero container">
+  <span class="hero__eyebrow">Case Studies</span>
+  <h1>Results our clients talk about</h1>
+  {{ answerBox("This page collects client feedback and outcomes from DataQube Analytics engagements. The examples below are placeholders pending client approval — real, named case studies will replace them as clients confirm quotes.") }}
+</section>
+
+<section class="section container text-center">
+  <h2>Organizations we've worked with</h2>
+  {{ clientLogos(logos) }}
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <h2>Testimonials</h2>
+    <div class="grid grid--3 mt-8">
+      {% for t in testimonials %}
+      {{ testimonialCard(t) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  {{ ctaBand("Want results like these?", "Tell us about your current data setup and what you're trying to achieve — we'll follow up with a scoped plan.", "Contact Us", "/contact/") }}
+</section>

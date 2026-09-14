@@ -1,0 +1,123 @@
+{# Sitewide Organization/ProfessionalService entity — same @id referenced by Service, ContactPage, etc. #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "{{ site.url }}/#organization",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}/",
+  "description": {{ site.description | dump | safe }},
+  "email": "{{ site.nap.email }}",
+  "telephone": "{{ site.nap.phone }}",
+  "areaServed": "CA",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.nap.streetAddress }}",
+    "addressLocality": "{{ site.nap.addressLocality }}",
+    "addressRegion": "{{ site.nap.addressRegion }}",
+    "postalCode": "{{ site.nap.postalCode }}",
+    "addressCountry": "{{ site.nap.addressCountry }}"
+  },
+  "sameAs": [{% if site.social.linkedin %}"{{ site.social.linkedin }}"{% endif %}]
+}
+</script>
+
+{% if breadcrumbs and breadcrumbs.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {% for crumb in breadcrumbs %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "name": {{ crumb.name | dump | safe }},
+      "item": "{{ site.url }}{{ crumb.url }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if service %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": {{ service.serviceType | dump | safe }},
+  "name": {{ service.name | dump | safe }},
+  "description": {{ service.heroAnswer | dump | safe }},
+  "areaServed": "CA",
+  "provider": { "@id": "{{ site.url }}/#organization" }
+}
+</script>
+{% endif %}
+
+{% if serviceListItems %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {% for s in serviceListItems %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "url": "{{ site.url }}/services/{{ s.slug }}/",
+      "name": {{ s.name | dump | safe }}
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if faqItems and faqItems.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faqItems %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.a | dump | safe }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if article %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ article.title | dump | safe }},
+  "description": {{ article.description | dump | safe }},
+  "datePublished": "{{ article.date | isoDate }}",
+  "dateModified": "{{ (article.updated or article.date) | isoDate }}",
+  "author": { "@type": "Organization", "name": "{{ site.name }}", "@id": "{{ site.url }}/#organization" },
+  "publisher": { "@type": "Organization", "name": "{{ site.name }}", "@id": "{{ site.url }}/#organization" },
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}"
+}
+</script>
+{% endif %}
+
+{% if isContactPage %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": "{{ site.url }}{{ page.url }}",
+  "about": { "@id": "{{ site.url }}/#organization" }
+}
+</script>
+{% endif %}

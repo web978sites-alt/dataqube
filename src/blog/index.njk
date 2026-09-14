@@ -1,0 +1,16 @@
+---
+title: Blog
+description: Insights on data management, advanced analytics, business intelligence, data visualization, and data strategy from DataQube Analytics.
+layout: layouts/blog-index.njk
+eleventyExcludeFromCollections: true
+pagination:
+  data: collections.posts
+  size: 9
+  alias: posts
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+breadcrumbs:
+  - name: Home
+    url: /
+  - name: Blog
+    url: /blog/
+---

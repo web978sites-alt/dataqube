@@ -1,0 +1,9 @@
+---
+layout: layouts/base.njk
+---
+{% if breadcrumbs and breadcrumbs.length %}
+<div class="container" style="padding-top: var(--space-5);">
+  {% include "partials/breadcrumbs.njk" %}
+</div>
+{% endif %}
+{{ content | safe }}

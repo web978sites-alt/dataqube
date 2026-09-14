@@ -24,9 +24,11 @@ layout: layouts/page.njk
 
 {% if service.faqs and service.faqs.length %}
 <section class="section section--alt">
-  <div class="container max-w-prose">
+  <div class="container">
     <h2>Frequently asked questions about {{ service.name | lower }}</h2>
-    {{ faqBlock(service.faqs) }}
+    <div class="max-w-prose">
+      {{ faqBlock(service.faqs) }}
+    </div>
   </div>
 </section>
 {% endif %}

@@ -34,7 +34,7 @@ Outputs the static site to `_site/`.
 - `src/_includes/layouts/` — page templates (`base`, `page`, `service`, `blog-post`, `blog-index`).
 - `src/_includes/partials/` — reusable page fragments (nav, footer, JSON-LD, FAQ blocks, etc).
 - `src/_includes/icons/` — inline SVG icon macros (no stock images/icon fonts used anywhere on the site).
-- `src/assets/css/` — plain CSS split into token/reset/base/layout/component/utility files, concatenated into `main.css` automatically at build time.
+- `src/assets/css/` — plain CSS split into token/reset/base/layout/component/utility files, linked directly in that order in `base.njk` (no build-time concatenation).
 - `src/blog/posts/` — blog posts as Markdown files. Add a new post by creating a new `.md` file here with `title`, `description`, `date`, and `tags` front matter.
 - `src/services/`, `src/legal/` — individual pages.
 

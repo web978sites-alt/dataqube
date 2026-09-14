@@ -31,4 +31,28 @@
       link.setAttribute("aria-current", "page");
     }
   });
+
+  // Scroll-reveal for cards/testimonials/CTA bands. Only hides content
+  // (via .js-ready in CSS) once we know we can actually reveal it again —
+  // if IntersectionObserver isn't supported, skip entirely and stay visible.
+  if ("IntersectionObserver" in window) {
+    var revealTargets = document.querySelectorAll(".card, .testimonial-card, .cta-band");
+    if (revealTargets.length) {
+      document.documentElement.classList.add("js-ready");
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: "0px 0px -40px 0px", threshold: 0.1 }
+      );
+      revealTargets.forEach(function (el) {
+        observer.observe(el);
+      });
+    }
+  }
 })();

@@ -3,10 +3,10 @@
   <div class="container site-header__inner">
     <a class="brand" href="/">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="9" height="9" rx="2" fill="#0B5FFF"></rect>
-        <rect x="13" y="2" width="9" height="9" rx="2" fill="#14B8A6"></rect>
-        <rect x="2" y="13" width="9" height="9" rx="2" fill="#14B8A6"></rect>
-        <rect x="13" y="13" width="9" height="9" rx="2" fill="#0B5FFF"></rect>
+        <rect x="2" y="2" width="9" height="9" rx="2" fill="#7DD3FC"></rect>
+        <rect x="13" y="2" width="9" height="9" rx="2" fill="#38BDF8"></rect>
+        <rect x="2" y="13" width="9" height="9" rx="2" fill="#38BDF8"></rect>
+        <rect x="13" y="13" width="9" height="9" rx="2" fill="#7DD3FC"></rect>
       </svg>
       <span>{{ site.name }}</span>
     </a>
@@ -19,7 +19,6 @@
       {% for item in site.nav %}
       <a class="primary-nav__link" href="{{ item.url }}">{{ item.label }}</a>
       {% endfor %}
-      <a class="btn btn--primary primary-nav__cta" href="/contact/">Get Started</a>
     </nav>
   </div>
 </header>

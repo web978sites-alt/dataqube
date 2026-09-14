@@ -1,24 +1,58 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/inter-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/inter-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/inter-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/inter-latin-700-normal.woff2") format("woff2");
+}
+
 :root {
-  /* Color — blue/teal, WCAG-AA checked against white/ink */
-  --color-primary-600: #0b5fff;
-  --color-primary-700: #084acc;
-  --color-primary-50: #eaf1ff;
-  --color-teal-500: #14b8a6;
-  --color-teal-50: #e6fbf8;
+  /* Brand accent — light blue standing in for ClickHouse's signature yellow */
+  --color-primary-600: #7dd3fc;
+  --color-primary-700: #38bdf8;
+  --color-primary-disabled: #16313d;
+  --color-teal-500: #38bdf8;
+  --color-teal-50: #0f2937;
 
-  --color-ink-900: #0f172a;
-  --color-ink-600: #475569;
-  --color-ink-400: #94a3b8;
+  /* Canvas & surfaces — near-black, ClickHouse has no light-mode marketing surface */
+  --color-surface-0: #0a0a0a;
+  --color-surface-50: #121212;
+  --color-surface-100: #1a1a1a;
+  --color-surface-elevated: #242424;
+  --color-border: #2a2a2a;
+  --color-border-strong: #3a3a3a;
 
-  --color-surface-0: #ffffff;
-  --color-surface-50: #f8fafc;
-  --color-surface-100: #f1f5f9;
-  --color-border: #e2e8f0;
+  /* Text — flipped for a dark canvas */
+  --color-ink-900: #ffffff;
+  --color-ink-600: #cccccc;
+  --color-ink-400: #888888;
 
-  --color-success: #0f9d58;
+  --color-on-primary: #0a0a0a;
+  --color-success: #22c55e;
 
   /* Type */
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
@@ -29,8 +63,11 @@
   --text-3xl: 2.25rem;
   --text-4xl: 2.75rem;
 
-  --leading-tight: 1.2;
-  --leading-normal: 1.6;
+  --tracking-tight: -0.02em;
+  --tracking-tighter: -0.03em;
+
+  --leading-tight: 1.15;
+  --leading-normal: 1.55;
 
   /* Space (4px scale) */
   --space-1: 0.25rem;
@@ -43,11 +80,11 @@
   --space-10: 4rem;
   --space-12: 6rem;
 
-  /* Shape */
+  /* Shape — ClickHouse doctrine: no drop shadows, hairline borders carry elevation */
   --radius-md: 8px;
-  --radius-lg: 16px;
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --radius-lg: 12px;
+  --shadow-sm: none;
+  --shadow-md: none;
 
   --container-max: 1140px;
 }

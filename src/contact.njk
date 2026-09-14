@@ -10,6 +10,7 @@ breadcrumbs:
     url: /contact/
 ---
 {% from "partials/answer-box.njk" import answerBox %}
+{% set mapQuery = (site.nap.streetAddress + ', ' + site.nap.addressLocality + ', ' + site.nap.addressRegion + ' ' + site.nap.postalCode) | urlencode %}
 
 <section class="hero container">
   <span class="hero__eyebrow">Contact</span>
@@ -48,13 +49,26 @@ breadcrumbs:
     <div>
       <h2>Other ways to reach us</h2>
       <p><strong>Email:</strong> <a href="mailto:{{ site.nap.email }}">{{ site.nap.email }}</a></p>
-      <p><strong>Phone:</strong> {{ site.nap.phone }}</p>
+      <p><strong>Phone:</strong> <a href="tel:+1{{ site.nap.phone | replace('-', '') }}">{{ site.nap.phone }}</a></p>
       <p><strong>Address:</strong><br>
         {{ site.nap.streetAddress }}<br>
         {{ site.nap.addressLocality }}, {{ site.nap.addressRegion }} {{ site.nap.postalCode }}<br>
         Canada
       </p>
-      <p class="text-sm" style="color: var(--color-ink-400);">Placeholder contact details shown above — replace with real business information before launch.</p>
+      <p class="mt-4">
+        <a class="btn btn--secondary" href="https://www.google.com/maps/search/?api=1&query={{ mapQuery }}" target="_blank" rel="noopener">View on Google Maps &rarr;</a>
+      </p>
+
+      <div class="map-embed mt-6">
+        <iframe
+          src="https://www.google.com/maps?q={{ mapQuery }}&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map showing the {{ site.name }} office location">
+        </iframe>
+      </div>
+
+      <p class="text-sm mt-6" style="color: var(--color-ink-400);">Email above is a placeholder — replace with a real inbox before launch.</p>
     </div>
   </div>
 </section>

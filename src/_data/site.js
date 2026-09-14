@@ -12,14 +12,14 @@ module.exports = {
 
   tagline: "Empowering data-driven success with advanced analytics.",
 
-  // PLACEHOLDER — replace before launch with real business contact details.
   nap: {
+    // PLACEHOLDER — real email not yet provided, replace before launch.
     email: "info@dataqubeanalytics.ca",
-    phone: "+1 (000) 000-0000",
-    streetAddress: "123 Placeholder Street, Suite 000",
-    addressLocality: "Toronto",
+    phone: "1-800-430-4730",
+    streetAddress: "1000 - 10 Four Seasons Place",
+    addressLocality: "Etobicoke",
     addressRegion: "ON",
-    postalCode: "M0M 0M0",
+    postalCode: "M9B 6H7",
     addressCountry: "CA",
   },
 

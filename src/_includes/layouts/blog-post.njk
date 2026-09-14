@@ -1,17 +1,19 @@
 ---
 layout: layouts/page.njk
 ---
-<article class="container section max-w-prose" style="margin-inline:auto;">
-  <p class="post-meta">{{ date | dateFriendly }}</p>
-  <h1>{{ title }}</h1>
-  <div class="mt-6">
-    {{ content | safe }}
+<article class="container section">
+  <div class="max-w-prose">
+    <p class="post-meta">{{ date | dateFriendly }}</p>
+    <h1>{{ title }}</h1>
+    <div class="mt-6">
+      {{ content | safe }}
+    </div>
+    {% if tags | visibleTags %}
+    <div class="mt-8">
+      {% for tag in tags | visibleTags %}
+      <a class="tag-pill" href="/blog/tags/{{ tag | slugify }}/">{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
-  {% if tags | visibleTags %}
-  <div class="mt-8">
-    {% for tag in tags | visibleTags %}
-    <a class="tag-pill" href="/blog/tags/{{ tag | slugify }}/">{{ tag }}</a>
-    {% endfor %}
-  </div>
-  {% endif %}
 </article>

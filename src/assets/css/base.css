@@ -5,28 +5,31 @@ html {
 body {
   font-family: var(--font-sans);
   font-size: var(--text-base);
-  color: var(--color-ink-900);
+  color: var(--color-ink-600);
   background: var(--color-surface-0);
 }
 
 h1, h2, h3, h4 {
   line-height: var(--leading-tight);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-ink-900);
 }
 
 h1 {
   font-size: var(--text-4xl);
-  letter-spacing: -0.01em;
+  font-weight: 500;
+  letter-spacing: var(--tracking-tighter);
 }
 
 h2 {
   font-size: var(--text-2xl);
+  letter-spacing: var(--tracking-tight);
   margin-bottom: var(--space-4);
 }
 
 h3 {
   font-size: var(--text-lg);
+  font-weight: 500;
   margin-bottom: var(--space-2);
 }
 
@@ -52,7 +55,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid var(--color-teal-500);
+  outline: 3px solid var(--color-primary-600);
   outline-offset: 2px;
 }
 
@@ -60,8 +63,8 @@ textarea:focus-visible {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--color-primary-700);
-  color: #fff;
+  background: var(--color-primary-600);
+  color: var(--color-on-primary);
   padding: var(--space-2) var(--space-4);
   z-index: 100;
   border-radius: 0 0 var(--radius-md) 0;
@@ -74,6 +77,53 @@ textarea:focus-visible {
 
 @media (min-width: 900px) {
   h1 {
-    font-size: 3.25rem;
+    font-size: 3.5rem;
   }
+}
+
+/* Page-load animation — pure CSS, runs automatically on paint, no JS
+   dependency. prefers-reduced-motion is already neutralized globally
+   in reset.css, so this degrades to an instant, motion-free appearance. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.site-header {
+  animation: fade-in 0.4s ease both;
+}
+
+.hero__eyebrow {
+  animation: fade-up 0.5s ease both;
+}
+
+.hero h1 {
+  animation: fade-up 0.5s ease both;
+  animation-delay: 0.08s;
+}
+
+.hero .answer-box {
+  animation: fade-up 0.5s ease both;
+  animation-delay: 0.16s;
+}
+
+.hero > p {
+  animation: fade-up 0.5s ease both;
+  animation-delay: 0.22s;
+}
+
+.hero__actions {
+  animation: fade-up 0.5s ease both;
+  animation-delay: 0.28s;
 }

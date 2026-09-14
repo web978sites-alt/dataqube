@@ -9,14 +9,22 @@ showServiceList: true
 {% from "partials/cta-band.njk" import ctaBand %}
 {% from "partials/client-logos.njk" import clientLogos %}
 {% from "partials/testimonial-card.njk" import testimonialCard %}
+{% from "partials/hero-graphic.njk" import heroGraphic %}
 
 <section class="hero container">
-  <span class="hero__eyebrow">Data Analytics Consulting</span>
-  <h1>Empowering data-driven success with advanced analytics.</h1>
-  {{ answerBox(site.description) }}
-  <div class="hero__actions">
-    <a class="btn btn--primary" href="/contact/">Get Started</a>
-    <a class="btn btn--secondary" href="/services/">Explore Services</a>
+  <div class="hero-grid">
+    <div>
+      <span class="hero__eyebrow">Data Analytics Consulting</span>
+      <h1>Empowering data-driven success with advanced analytics.</h1>
+      {{ answerBox(site.description) }}
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="/contact/">Get Started</a>
+        <a class="btn btn--secondary" href="/services/">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-graphic-wrap">
+      {{ heroGraphic() }}
+    </div>
   </div>
 </section>
 
@@ -44,6 +52,7 @@ showServiceList: true
     <div class="grid grid--3 mt-8">
       {% for i in industries %}
       <div class="card">
+        {{ icons[i.icon]("card__icon") }}
         <h3>{{ i.name }}</h3>
         <p>{{ i.description }}</p>
       </div>

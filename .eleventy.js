@@ -1,6 +1,4 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const fs = require("fs");
-const path = require("path");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
@@ -10,24 +8,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
 
-  // Concatenate the CSS layers into a single main.css at build time.
-  // No PostCSS/webpack — just a fixed, deterministic file order.
-  eleventyConfig.on("eleventy.before", () => {
-    const cssDir = path.join(__dirname, "src/assets/css");
-    const order = [
-      "tokens.css",
-      "reset.css",
-      "base.css",
-      "layout.css",
-      "components.css",
-      "utilities.css",
-    ];
-    const combined = order
-      .map((file) => fs.readFileSync(path.join(cssDir, file), "utf8"))
-      .join("\n");
-    fs.writeFileSync(path.join(cssDir, "main.css"), combined);
-  });
-  eleventyConfig.addPassthroughCopy("src/assets/css/main.css");
+  // CSS is authored as separate cascade layers (tokens/reset/base/layout/
+  // components/utilities) and linked directly in that order in base.njk —
+  // no build-time concatenation, since writing a combined file back inside
+  // the watched src/ directory would retrigger Eleventy's own watcher.
+  eleventyConfig.addPassthroughCopy("src/assets/css");
 
   // Date filters used in blog templates and JSON-LD.
   eleventyConfig.addFilter("dateFriendly", (dateObj) => {

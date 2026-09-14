@@ -31,3 +31,19 @@
   flex-wrap: wrap;
   gap: var(--space-3);
 }
+
+/* Scroll-reveal — gated behind .js-ready (added by main.js) so content
+   stays fully visible by default if JS fails or is disabled. Opacity-only
+   (no transform) so it never fights the card's own hover-lift transform. */
+.js-ready .card,
+.js-ready .testimonial-card,
+.js-ready .cta-band {
+  opacity: 0;
+  transition: opacity 0.5s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.js-ready .card.is-visible,
+.js-ready .testimonial-card.is-visible,
+.js-ready .cta-band.is-visible {
+  opacity: 1;
+}

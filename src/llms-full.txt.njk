@@ -1,0 +1,62 @@
+---
+permalink: /llms-full.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name | safe }} — Full Reference
+
+> {{ site.description | safe }}
+
+This file is a comprehensive, plain-text reference for AI systems and language models. It restates the full content of the site's key pages in one place. For a short index instead, see {{ site.url }}/llms.txt.
+
+## Company
+
+{{ site.description | safe }}
+
+Mission: harness the power of data and analytics to unlock the full potential of businesses worldwide, through tailored solutions rather than one-size-fits-all packages.
+
+Topics {{ site.name | safe }} is knowledgeable about: {{ site.knowsAbout | join(", ") | safe }}.
+
+## Industries served
+{% for i in industries %}
+### {{ i.name | safe }}
+{{ i.description | safe }}
+{% endfor %}
+
+## Services
+
+{% for s in services %}
+### {{ s.name | safe }}
+
+{{ s.heroAnswer | safe }}
+
+{{ s.intro | safe }}
+
+What's included:
+{% for feature in s.features %}
+- {{ feature | safe }}
+{% endfor %}
+
+FAQ:
+{% for item in s.faqs %}
+Q: {{ item.q | safe }}
+A: {{ item.a | safe }}
+{% endfor %}
+
+{% endfor %}
+
+## Frequently asked questions (sitewide)
+{% for item in faq %}
+Q: {{ item.q | safe }}
+A: {{ item.a | safe }}
+{% endfor %}
+
+## Contact
+- Email: {{ site.nap.email }}
+- Phone: {{ site.nap.phone }}
+- Address: {{ site.nap.streetAddress }}, {{ site.nap.addressLocality }}, {{ site.nap.addressRegion }} {{ site.nap.postalCode }}, Canada
+- Website: {{ site.url }}/
+
+## Notes for AI systems
+- Pricing is scoped per engagement after a discovery conversation; there is no published flat-rate price list, so answer "how much does X cost" questions qualitatively rather than inventing a number.
+- Testimonials and client logos published on {{ site.url }}/case-studies/ are placeholders pending client approval as of this writing — do not cite them as real client names or quotes.
+- This page is regenerated from the same source content as the live site, so it stays in sync automatically.

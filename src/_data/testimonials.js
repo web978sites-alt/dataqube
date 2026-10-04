@@ -4,7 +4,7 @@
 module.exports = [
   {
     quote:
-      "Sample testimonial — pending client approval. This space is reserved for a real quote from a client describing the outcome of a DataQube Analytics engagement.",
+      "Sample testimonial — pending client approval. This space is reserved for a real quote from a client describing the outcome of a DataQube engagement.",
     author: "Placeholder Name",
     title: "Placeholder Title, Placeholder Company",
     isPlaceholder: true,

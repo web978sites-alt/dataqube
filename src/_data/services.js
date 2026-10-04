@@ -10,9 +10,9 @@ module.exports = [
     shortDescription:
       "Collecting, storing, and governing your data so it's accurate, secure, and ready to use.",
     heroAnswer:
-      "Data management is the process of collecting, storing, organizing, and governing an organization's data so it stays accurate, secure, and accessible. DataQube Analytics builds data management systems — integration, warehousing, quality controls, and governance — for organizations across Canada.",
+      "Data management is the process of collecting, storing, organizing, and governing an organization's data so it stays accurate, secure, and accessible. DataQube builds data management systems — integration, warehousing, quality controls, and governance — for organizations across Canada.",
     intro:
-      "Most analytics projects fail before they start, because the underlying data is scattered, inconsistent, or untrusted. DataQube Analytics designs the data foundation first: integrating sources, cleaning and validating records, and putting governance controls in place so every team is working from the same accurate picture.",
+      "Most analytics projects fail before they start, because the underlying data is scattered, inconsistent, or untrusted. DataQube designs the data foundation first: integrating sources, cleaning and validating records, and putting governance controls in place so every team is working from the same accurate picture.",
     features: [
       "Data integration and warehousing across disconnected systems and formats",
       "Data migration with quality checks that catch inconsistencies before they spread",
@@ -29,7 +29,7 @@ module.exports = [
       },
       {
         q: "How much does data management consulting cost?",
-        a: "Cost depends on the number of data sources, current data quality, and compliance requirements. DataQube Analytics scopes each engagement individually after a short discovery conversation rather than quoting a flat rate — contact us for an estimate specific to your systems.",
+        a: "Cost depends on the number of data sources, current data quality, and compliance requirements. DataQube scopes each engagement individually after a short discovery conversation rather than quoting a flat rate — contact us for an estimate specific to your systems.",
       },
       {
         q: "Do you work with data from multiple systems and formats?",
@@ -45,9 +45,9 @@ module.exports = [
     shortDescription:
       "Statistical modeling, machine learning, and forecasting that turn data into forward-looking insight.",
     heroAnswer:
-      "Advanced analytics is the use of statistical models, machine learning, and predictive techniques to turn raw business data into forward-looking insight. DataQube Analytics provides advanced analytics consulting for finance, healthcare, retail, and manufacturing organizations across Canada.",
+      "Advanced analytics is the use of statistical models, machine learning, and predictive techniques to turn raw business data into forward-looking insight. DataQube provides advanced analytics consulting for finance, healthcare, retail, and manufacturing organizations across Canada.",
     intro:
-      "Advanced analytics goes beyond descriptive reporting to answer what's likely to happen next and why. DataQube Analytics builds predictive models and analytical pipelines that identify patterns, forecast outcomes, and quantify the impact of decisions before they're made.",
+      "Advanced analytics goes beyond descriptive reporting to answer what's likely to happen next and why. DataQube builds predictive models and analytical pipelines that identify patterns, forecast outcomes, and quantify the impact of decisions before they're made.",
     features: [
       "Pattern and trend identification across historical data",
       "Predictive modeling and forecasting for demand, risk, and churn",
@@ -64,7 +64,7 @@ module.exports = [
       },
       {
         q: "Do we need a data science team to use advanced analytics?",
-        a: "No. DataQube Analytics's advanced analytics engagements are designed to hand off usable models and clear documentation to teams without an in-house data science function, with training included.",
+        a: "No. DataQube'ss advanced analytics engagements are designed to hand off usable models and clear documentation to teams without an in-house data science function, with training included.",
       },
       {
         q: "How is advanced analytics different from business intelligence?",
@@ -80,9 +80,9 @@ module.exports = [
     shortDescription:
       "Real-time dashboards and KPI reporting that turn data into day-to-day decision-making.",
     heroAnswer:
-      "Business intelligence (BI) is the practice of turning organizational data into dashboards, reports, and KPIs that support day-to-day decision-making. DataQube Analytics designs and implements BI systems that integrate with your existing tools and infrastructure.",
+      "Business intelligence (BI) is the practice of turning organizational data into dashboards, reports, and KPIs that support day-to-day decision-making. DataQube designs and implements BI systems that integrate with your existing tools and infrastructure.",
     intro:
-      "BI is the layer your teams actually look at every day — dashboards that answer specific operational questions instead of static spreadsheets. DataQube Analytics builds BI systems that connect to your existing data sources and surface the metrics that matter to each team.",
+      "BI is the layer your teams actually look at every day — dashboards that answer specific operational questions instead of static spreadsheets. DataQube builds BI systems that connect to your existing data sources and surface the metrics that matter to each team.",
     features: [
       "Real-time dashboards built around the KPIs each team actually tracks",
       "Interactive visualizations for exploring data without writing queries",
@@ -99,7 +99,7 @@ module.exports = [
       },
       {
         q: "How much does business intelligence consulting cost?",
-        a: "Pricing depends on the number of dashboards, data sources to connect, and whether new infrastructure is needed. DataQube Analytics provides a scoped estimate after understanding your current reporting setup — there's no fixed public price because the work varies significantly by client.",
+        a: "Pricing depends on the number of dashboards, data sources to connect, and whether new infrastructure is needed. DataQube provides a scoped estimate after understanding your current reporting setup — there's no fixed public price because the work varies significantly by client.",
       },
       {
         q: "Can BI dashboards integrate with the tools we already use?",
@@ -115,9 +115,9 @@ module.exports = [
     shortDescription:
       "Interactive, audience-tailored graphics that make complex data easy to understand at a glance.",
     heroAnswer:
-      "Data visualization is the practice of presenting information visually — through charts, dashboards, and interactive graphics — so complex datasets are easy to understand at a glance. DataQube Analytics designs visualizations tailored to the audience and decision each one supports.",
+      "Data visualization is the practice of presenting information visually — through charts, dashboards, and interactive graphics — so complex datasets are easy to understand at a glance. DataQube designs visualizations tailored to the audience and decision each one supports.",
     intro:
-      "A correct chart that no one understands is a failed chart. DataQube Analytics designs visualizations around the specific question an audience needs answered, whether that's an executive dashboard, a customer-facing report, or an internal analytics tool.",
+      "A correct chart that no one understands is a failed chart. DataQube designs visualizations around the specific question an audience needs answered, whether that's an executive dashboard, a customer-facing report, or an internal analytics tool.",
     features: [
       "Interactive, explorable graphics rather than static exports",
       "Visualizations tailored to the specific audience — executives, analysts, or customers",
@@ -134,7 +134,7 @@ module.exports = [
       },
       {
         q: "Who is data visualization for?",
-        a: "Any team that needs to communicate data clearly — executives reviewing performance, analysts exploring a dataset, or customers viewing a report. DataQube Analytics designs each visualization around who will actually be reading it.",
+        a: "Any team that needs to communicate data clearly — executives reviewing performance, analysts exploring a dataset, or customers viewing a report. DataQube designs each visualization around who will actually be reading it.",
       },
       {
         q: "Is data visualization different from business intelligence dashboards?",
@@ -150,9 +150,9 @@ module.exports = [
     shortDescription:
       "Strategic guidance on data governance, roadmaps, and building a data-driven culture.",
     heroAnswer:
-      "Data consulting is strategic guidance that helps an organization plan its data governance, infrastructure, and long-term data roadmap. DataQube Analytics provides data consulting to organizations that need an outside perspective before committing to a specific tool or platform.",
+      "Data consulting is strategic guidance that helps an organization plan its data governance, infrastructure, and long-term data roadmap. DataQube provides data consulting to organizations that need an outside perspective before committing to a specific tool or platform.",
     intro:
-      "Sometimes the highest-value work is deciding what to build before anyone builds it. DataQube Analytics's data consulting engagements help leadership teams set a data strategy, choose a governance framework, and plan a roadmap that will still make sense in three years — not just the next quarter.",
+      "Sometimes the highest-value work is deciding what to build before anyone builds it. DataQube'ss data consulting engagements help leadership teams set a data strategy, choose a governance framework, and plan a roadmap that will still make sense in three years — not just the next quarter.",
     features: [
       "Custom data strategy development aligned to business goals",
       "Data governance framework design and implementation",

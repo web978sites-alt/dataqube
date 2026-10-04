@@ -2,8 +2,8 @@
 // their own FAQPage schema on each service page.
 module.exports = [
   {
-    q: "What does DataQube Analytics do?",
-    a: "DataQube Analytics is a Canadian data analytics consulting firm. We help organizations manage, analyze, and visualize their data through five core services: data management, advanced analytics, business intelligence, data visualization, and data consulting.",
+    q: "What does DataQube do?",
+    a: "DataQube is a Canadian data analytics consulting firm. We help organizations manage, analyze, and visualize their data through five core services: data management, advanced analytics, business intelligence, data visualization, and data consulting.",
   },
   {
     q: "What industries do you work with?",

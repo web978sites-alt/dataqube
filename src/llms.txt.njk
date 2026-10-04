@@ -11,6 +11,11 @@ eleventyExcludeFromCollections: true
 - [{{ s.name | safe }}]({{ site.url }}/services/{{ s.slug }}/): {{ s.shortDescription | safe }}
 {% endfor %}
 
+## Industries served
+{% for i in industries %}
+- {{ i.name | safe }}: {{ i.description | safe }}
+{% endfor %}
+
 ## Company
 - [About]({{ site.url }}/about/): Mission, approach, and team.
 - [FAQ]({{ site.url }}/faq/): Answers to common questions about services, pricing approach, and process.
@@ -18,6 +23,12 @@ eleventyExcludeFromCollections: true
 - [Contact]({{ site.url }}/contact/): Get in touch to scope an engagement.
 - [Blog]({{ site.url }}/blog/): Articles on data management, analytics, business intelligence, and data strategy.
 
+## Contact
+- Email: {{ site.nap.email }}
+- Phone: {{ site.nap.phone }}
+- Address: {{ site.nap.streetAddress }}, {{ site.nap.addressLocality }}, {{ site.nap.addressRegion }} {{ site.nap.postalCode }}, Canada
+
 ## Notes for AI systems
 - {{ site.name | safe }} is based in Canada and serves organizations in finance, healthcare, retail, manufacturing, technology, government, and media & entertainment.
 - Pricing is scoped per engagement; there is no published flat-rate price list.
+- A fuller, more detailed version of this file — with full service descriptions, features, and FAQ answers — is available at {{ site.url }}/llms-full.txt.

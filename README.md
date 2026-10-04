@@ -1,4 +1,4 @@
-# DataQube Analytics — Website
+# DataQube — Website
 
 Static marketing site built with [Eleventy (11ty)](https://www.11ty.dev/). Plain HTML/CSS/JS output, Markdown-authored blog, no server or database required.
 

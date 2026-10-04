@@ -1,7 +1,7 @@
 {
   "name": "dataqube-analytics-website",
   "version": "1.0.0",
-  "description": "DataQube Analytics marketing site — Eleventy static build",
+  "description": "DataQube marketing site — Eleventy static build",
   "private": true,
   "scripts": {
     "build": "eleventy",

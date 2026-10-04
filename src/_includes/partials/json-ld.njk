@@ -10,6 +10,15 @@
   "email": "{{ site.nap.email }}",
   "telephone": "{{ site.nap.phone }}",
   "areaServed": "CA",
+  "inLanguage": "en-CA",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ site.url }}{{ site.logo }}",
+    "width": {{ site.logoWidth }},
+    "height": {{ site.logoHeight }}
+  },
+  "image": "{{ site.url }}{{ site.defaultOgImage }}",
+  "knowsAbout": {{ site.knowsAbout | dump | safe }},
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "{{ site.nap.streetAddress }}",
@@ -19,6 +28,40 @@
     "addressCountry": "{{ site.nap.addressCountry }}"
   },
   "sameAs": [{% if site.social.linkedin %}"{{ site.social.linkedin }}"{% endif %}]
+}
+</script>
+
+{# Sitewide WebSite entity — distinct from the Organization, ties every page's WebPage node together. #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "{{ site.url }}/#website",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}/",
+  "inLanguage": "en-CA",
+  "publisher": { "@id": "{{ site.url }}/#organization" }
+}
+</script>
+
+{# Generic WebPage node on every page — carries inLanguage + a Speakable
+   specification for voice assistants/AEO. ".answer-box" is harmless to
+   list even on pages without one; Google simply finds nothing to read. #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "{{ site.url }}{{ page.url }}#webpage",
+  "url": "{{ site.url }}{{ page.url }}",
+  "name": {{ (title or site.name) | dump | safe }},
+  "description": {{ (description or site.description) | dump | safe }},
+  "inLanguage": "en-CA",
+  "isPartOf": { "@id": "{{ site.url }}/#website" },
+  "about": { "@id": "{{ site.url }}/#organization" },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".answer-box"]
+  }
 }
 </script>
 
@@ -104,6 +147,7 @@
   "description": {{ article.description | dump | safe }},
   "datePublished": "{{ article.date | isoDate }}",
   "dateModified": "{{ (article.updated or article.date) | isoDate }}",
+  "inLanguage": "en-CA",
   "author": { "@type": "Organization", "name": "{{ site.name }}", "@id": "{{ site.url }}/#organization" },
   "publisher": { "@type": "Organization", "name": "{{ site.name }}", "@id": "{{ site.url }}/#organization" },
   "mainEntityOfPage": "{{ site.url }}{{ page.url }}"

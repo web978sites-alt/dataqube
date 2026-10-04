@@ -1,14 +1,14 @@
 // Single source of truth for site-wide identity, NAP, and canonical description.
 // Reused verbatim across meta tags, JSON-LD, the homepage answer box, and llms.txt
-// so every surface states who DataQube Analytics is in exactly the same words (GEO consistency).
+// so every surface states who DataQube is in exactly the same words (GEO consistency).
 module.exports = {
-  name: "DataQube Analytics",
+  name: "DataQube",
   url: "https://dataqubeanalytics.ca",
   locale: "en_CA",
 
   // One canonical description, reused everywhere. Keep it factual, not marketing fluff.
   description:
-    "DataQube Analytics is a Canadian data analytics consulting firm that helps organizations in finance, healthcare, retail, manufacturing, technology, government, and media turn raw data into decisions through data management, advanced analytics, business intelligence, data visualization, and data consulting services.",
+    "DataQube is a Canadian data analytics consulting firm that helps organizations in finance, healthcare, retail, manufacturing, technology, government, and media turn raw data into decisions through data management, advanced analytics, business intelligence, data visualization, and data consulting services.",
 
   tagline: "Empowering data-driven success with advanced analytics.",
 
@@ -44,4 +44,20 @@ module.exports = {
   ],
 
   defaultOgImage: "/assets/img/og/default-og.png",
+  logo: "/assets/img/logo/logo-512.png",
+  logoWidth: 512,
+  logoHeight: 512,
+
+  // Topics the Organization is authoritative on — a concrete entity signal
+  // for search/AI systems building a topical understanding of who we are,
+  // independent of any single page's wording (GEO: entity disambiguation).
+  knowsAbout: [
+    "Data Management",
+    "Advanced Analytics",
+    "Business Intelligence",
+    "Data Visualization",
+    "Data Consulting",
+    "Data Governance",
+    "Predictive Analytics",
+  ],
 };

@@ -128,3 +128,107 @@ textarea:focus-visible {
   animation: fade-up 0.5s ease both;
   animation-delay: 0.28s;
 }
+
+/* Hero chart graphic — one-time draw-in, then a gentle continuous float
+   on the accent chip. All neutralized under prefers-reduced-motion via
+   the global override in reset.css. */
+@keyframes bar-grow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+.hero-bar {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  animation: bar-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes line-draw {
+  from { stroke-dashoffset: 345; }
+  to { stroke-dashoffset: 0; }
+}
+
+.hero-trendline {
+  stroke-dasharray: 345;
+  stroke-dashoffset: 345;
+  animation: line-draw 1s ease-out both;
+  animation-delay: 0.9s;
+}
+
+@keyframes dot-pop {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.hero-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: dot-pop 0.3s ease-out both;
+}
+
+@keyframes chip-drop-in {
+  0% { opacity: 0; transform: translateY(-16px); }
+  60% { opacity: 1; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes chip-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.hero-chip {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: chip-drop-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both, chip-bob 3s ease-in-out infinite;
+  animation-delay: 0.3s, 1.2s;
+}
+
+/* Ambient floating background shapes — purely decorative, behind hero content */
+@keyframes shape-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(18px, -18px) scale(1.08); }
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(40px);
+  z-index: 0;
+  animation: shape-float 11s ease-in-out infinite;
+}
+
+.hero-shape--1 {
+  width: 220px;
+  height: 220px;
+  background: var(--color-primary-600);
+  opacity: 0.12;
+  top: -60px;
+  left: 55%;
+}
+
+.hero-shape--2 {
+  width: 160px;
+  height: 160px;
+  background: var(--color-teal-500);
+  opacity: 0.14;
+  top: 240px;
+  left: 6%;
+  animation-duration: 13s;
+  animation-direction: reverse;
+}
+
+.hero-shape--3 {
+  width: 120px;
+  height: 120px;
+  background: var(--color-primary-600);
+  opacity: 0.1;
+  bottom: -30px;
+  right: 8%;
+  animation-duration: 9s;
+  animation-delay: -3s;
+}

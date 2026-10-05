@@ -55,4 +55,26 @@
       });
     }
   }
+
+  // Mouse-parallax tilt on the homepage hero chart graphic. Purely a
+  // progressive enhancement — the graphic already looks correct without
+  // it — and skipped entirely under prefers-reduced-motion.
+  var heroGraphicWrap = document.querySelector(".hero-graphic-wrap");
+  var heroGraphic = heroGraphicWrap && heroGraphicWrap.querySelector(".hero-graphic");
+  var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (heroGraphic && !reducedMotion) {
+    heroGraphicWrap.addEventListener("mousemove", function (event) {
+      var rect = heroGraphicWrap.getBoundingClientRect();
+      var px = (event.clientX - rect.left) / rect.width - 0.5;
+      var py = (event.clientY - rect.top) / rect.height - 0.5;
+      var rotateY = px * 10;
+      var rotateX = py * -10;
+      heroGraphic.style.transform = "perspective(900px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+    });
+
+    heroGraphicWrap.addEventListener("mouseleave", function () {
+      heroGraphic.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg)";
+    });
+  }
 })();
